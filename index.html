@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>pubSub</title>
+	<script src="main.js"></script>
+</head>
+<body>
+	<script>
+		var messageLogger = function (topics, data) {
+			console.log('Logging: ' + topics + ' : ' + data);
+		}
+
+		var subscription = pubsub.subscribe('newMessage', messageLogger);
+
+		pubsub.publish('newMessage', 'hello world!');
+
+	</script>
+</body>
+</html>
